@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context="com.wwsis.engapp.POWTORKI">
+
+    <item android:id="@+id/Clear"
+
+        android:title="Clear list"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+</menu>

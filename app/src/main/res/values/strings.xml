@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">EngApp</string>
+    <!--stringi do aktywnosci EKRAN1-->
+    <string name="Witaj">Witaj w aplikacji do nauki języka angielskiego</string>
+    <string name="Lekcje">Lekcje</string>
+    <string name="Powtorki">Powtórki</string>
+    <string name="action_settings">Settings</string>
+
+
+    <!--stringi do nazw aktywnosci -->
+    <string name="title_activity_lekcje">LEKCJE</string>
+    <string name="title_activity_powtorki">POWTORKI</string>
+
+<!--stringi do aktywnosci LEKCJE-->
+    <string name="LISTA">Wybierz lekcję i weź się do roboty!</string>
+    <string name="DOM_RZ">DOM RZECZOWNIKI</string>
+    <string name="DOM_CZ">DOM CZASOWNIKI</string>
+    <string name="DOM_ZD">DOM ZDANIA</string>
+    <string name="PRACA_RZ">PRACA RZECZOWNIKI</string>
+    <string name="PRACA_CZ">PRACA CZASOWNIKI</string>
+    <string name="PRACA_ZD">PRACA ZDANIA</string>
+    <string name="SKLEP_RZ">SKLEP RZECZOWNIKI</string>
+    <string name="SKLEP_CZ">SKLEP CZASOWNIKI</string>
+    <string name="SKLEP_ZD">SKLEP ZDANIA</string>
+
+    <!--stringi do aktywnosci POWTÓRKI-->
+    <string name="POWTORKI">NIE POWTARZASZ? ZAPOMINASZ!</string>
+    <string name="SPRAWDZ">SPRAWDŹ</string>
+    <string name="WPISZ">WPISZ TŁUMACZENIE</string>
+    <string name="title_activity_dom_rzeczowniki">Dom_rzeczowniki</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <!--stringi do aktywnosci DOM RZECZOWNIKI-->
+    <string name="STATUS">STATUS:</string>
+    <string name="NDODANO">NIE DODANO</string>
+    <string name="DODANO">DODANO</string>
+    <string name="ZNAM">ZNAM</string>
+    <string name="DODAJ">DODAJ</string>
+
+
+    <!--LISTY SŁÓWEK - DOM RZECZOWNIKI ENG-->
+    <string name="WINDOW">window</string>
+    <string name="DOOR">door</string>
+    <string name="ROOF">roof</string>
+    <string name="WALL">wall</string>
+    <string name="BUILDING">building</string>
+
+    <!--LISTY SŁÓWEK - DOM RZECZOWNIKI ENG-->
+    <string name="OKNO">okno</string>
+    <string name="DRZWI">drzwi</string>
+    <string name="DACH">dach</string>
+    <string name="SCIANA">ściana</string>
+    <string name="BUDYNEK">budynek</string>
+    <string name="title_activity_nowe_slowka">Nowe_slowka</string>
+
+
+
+    <!--LISTY SŁÓWEK - DOM RZECZOWNIKI PL-->
+
+
+</resources>

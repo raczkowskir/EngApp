@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wwsis.engapp" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/brave"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Ekran1"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LEKCJE"
+            android:label="@string/title_activity_lekcje"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".POWTORKI"
+            android:label="@string/title_activity_powtorki"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Dom_rzeczowniki"
+            android:label="@string/title_activity_dom_rzeczowniki"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Nowe_slowka"
+            android:label="@string/title_activity_nowe_slowka" >
+        </activity>
+    </application>
+
+</manifest>
