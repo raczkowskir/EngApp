@@ -72,6 +72,7 @@ public class View_2_replays extends ActionBarActivity {
     }
 
     int nr_slowka = 0;
+    int numerSlowka;
 
     public void back(View view) {
         SQLiteDatabase db = openOrCreateDatabase("BazaDomrzeczowniki", MODE_PRIVATE, null);
@@ -81,13 +82,13 @@ public class View_2_replays extends ActionBarActivity {
         TextView licznik = (TextView) findViewById(R.id.licznik);
 
         try {
-            if (nr_slowka < nrOfRows - 1) {
+            if (nr_slowka != 0) {
                 nr_slowka--;
             } else {
-                nr_slowka = 0;
+                nr_slowka = nrOfRows -1;
                 slowo.setTextColor(Color.BLUE);
             }
-            int numerSlowka = nr_slowka - 1;
+            numerSlowka = nr_slowka + 1;
 
             Log.i("nr słowka " + nr_slowka, "   liczba wszystkich słówek " + nrOfRows);
             String daneDoLicznika = numerSlowka + "/" + nrOfRows;
@@ -114,7 +115,7 @@ public class View_2_replays extends ActionBarActivity {
                 nr_slowka = 0;
                 slowo.setTextColor(Color.BLUE);
             }
-            int numerSlowka = nr_slowka + 1;
+            numerSlowka = nr_slowka + 1;
 
             Log.i("nr słowka " + nr_slowka, "   liczba wszystkich słówek " + nrOfRows);
             String daneDoLicznika = numerSlowka + "/" + nrOfRows;
