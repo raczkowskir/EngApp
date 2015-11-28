@@ -3,6 +3,7 @@ package com.wwsis.engapp;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -40,7 +41,18 @@ public class Ulatwiacz extends ActionBarActivity {
             powtENG ="'"+powtENG+"'";
             powtPL ="'"+powtPL+"'";
 
-            db.execSQL("INSERT INTO Powtorki VALUES ( "+powtENG+", "+powtPL+",null);");
+           String zmienna = "''";
+        if(powtENG.equals(zmienna) || powtPL.equals(zmienna)){
+            TextView DodanoInfo = (TextView) findViewById(R.id.DodanoInfo);
+            DodanoInfo.setText("Próbujesz dodać puste pole");
+        }
+        else{
+            db.execSQL("INSERT INTO Powtorki VALUES ( " + powtENG + ", " + powtPL + ",null);");
+            TextView DodanoInfo = (TextView) findViewById(R.id.DodanoInfo);
+            DodanoInfo.setText("Dodałeś i działa ! ! !");
+            nazwaTv1.setText("");
+            nazwaTv2.setText("");
+        }
 
         }
 

@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wwsis.engapp.View_2_new">
+
+    <TextView
+        android:id="@+id/DodanoInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_weight="15"
+        android:gravity="center_vertical|center|center_horizontal"
+        android:text="Tutaj możesz dodawać nowe
+   słowa do Twojej listy"
+        android:textSize="24dp" />
+
+
+    <EditText
+        android:id="@+id/NowePL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:hint="Tu wpisz słówko PO ANGIELSKU"
+        android:textSize="15dp" />
+
+
+    <EditText
+        android:id="@+id/NoweEng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:hint="Tu wpisz słówko PO POLSKU"
+        android:textSize="15dp" />
+
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="55"
+        android:onClick="dodaj"
+        android:text="Dodaj do listy"
+        android:background="@drawable/buttonshape2"
+        android:textSize="30dp"
+        android:padding="16dp"
+        android:layout_margin="10dp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

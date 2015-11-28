@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Ekran1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Ekran1">
+
+    <Button
+        android:id="@+id/noweSlowko"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="50"
+        android:onClick="noweSlowko"
+        android:text="Dodaj nowe słowo"
+        android:background="@drawable/buttonshape2"
+        android:elegantTextHeight="false"
+        android:textSize="24dp"
+        android:layout_margin="5dp"
+        android:textStyle="bold"
+    />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="50"
+        android:onClick="WlaczPowtorki"
+        android:text="Twoja lista słów"
+        android:background="@drawable/buttonshape"
+        android:textStyle="bold"
+        android:textColor="#fffde10f"
+        android:textSize="24dp"
+        android:layout_margin="5dp"
+ />
+
+
+
+</LinearLayout>
