@@ -123,16 +123,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="50">
+        android:layout_weight="60">
 
         <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:layout_margin="5dp"
+            android:background="@drawable/buttonshape1"
+            android:onClick="back"
+            android:text="back"
+            android:textColor="#fffdfdfd"
+            android:textSize="32dp"
+            android:textStyle="bold" />
+        <Button
             android:id="@+id/next"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
             android:layout_margin="5dp"
             android:background="@drawable/buttonshape1"
             android:onClick="nastepne"
-            android:text="następne"
+            android:text="next"
             android:textColor="#fffdfdfd"
             android:textSize="32dp"
             android:textStyle="bold" />

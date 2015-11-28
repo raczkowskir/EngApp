@@ -72,7 +72,35 @@ public class View_2_replays extends ActionBarActivity {
     }
 
     int nr_slowka = 0;
+    int numerSlowka;
 
+    public void back(View view) {
+        SQLiteDatabase db = openOrCreateDatabase("BazaDomrzeczowniki", MODE_PRIVATE, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM Powtorki", null);
+        int nrOfRows = cursor.getCount();
+        TextView slowo = (TextView) findViewById(R.id.word);
+        TextView licznik = (TextView) findViewById(R.id.licznik);
+
+        try {
+            if (nr_slowka != 0) {
+                nr_slowka--;
+            } else {
+                nr_slowka = nrOfRows -1;
+                slowo.setTextColor(Color.BLUE);
+            }
+            numerSlowka = nr_slowka + 1;
+
+            Log.i("nr słowka " + nr_slowka, "   liczba wszystkich słówek " + nrOfRows);
+            String daneDoLicznika = numerSlowka + "/" + nrOfRows;
+
+            cursor.moveToPosition(nr_slowka);
+            slowo.setText(cursor.getString(cursor.getColumnIndex("Angielski1")));
+            licznik.setText(daneDoLicznika);
+
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Wylapano wyjatek w cofaniu");
+        }
+    }
     public void nastepne(View view) {
         SQLiteDatabase db = openOrCreateDatabase("BazaDomrzeczowniki", MODE_PRIVATE, null);
         Cursor cursor = db.rawQuery("SELECT * FROM Powtorki", null);
@@ -87,7 +115,7 @@ public class View_2_replays extends ActionBarActivity {
                 nr_slowka = 0;
                 slowo.setTextColor(Color.BLUE);
             }
-            int numerSlowka = nr_slowka + 1;
+            numerSlowka = nr_slowka + 1;
 
             Log.i("nr słowka " + nr_slowka, "   liczba wszystkich słówek " + nrOfRows);
             String daneDoLicznika = numerSlowka + "/" + nrOfRows;
@@ -127,13 +155,13 @@ public class View_2_replays extends ActionBarActivity {
     public void usun(View view) {
         SQLiteDatabase db = openOrCreateDatabase("BazaDomrzeczowniki", MODE_PRIVATE, null);
         Cursor cursor = db.rawQuery("SELECT * FROM Powtorki", null);
-        int nrOfRows = cursor.getCount();
+      //  int nrOfRows = cursor.getCount();
         cursor.moveToPosition(nr_slowka);
 
         TextView aktualneSlowo = (TextView) findViewById(R.id.word);
         String powtENG = aktualneSlowo.getText().toString();
 
-        String powtENG1 = "'" + powtENG + "\"";
+      //  String powtENG1 = "'" + powtENG + "\"";
 
         int reszta = db.delete("Powtorki", "Angielski1 = ? ", new String[]{powtENG});
 
