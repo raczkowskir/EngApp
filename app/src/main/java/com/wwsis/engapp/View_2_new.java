@@ -1,5 +1,6 @@
 package com.wwsis.engapp;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class View_2_new extends LogicOfAdd {
+    String lista = "Powtorki";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +32,13 @@ public class View_2_new extends LogicOfAdd {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.Lista1) {
+            lista = "Lista1";
+
         }
 
-        return super.onOptionsItemSelected(item);
-    }
+            return true;
+        }
 
     public void dodaj(View view) {
 
@@ -43,7 +46,7 @@ public class View_2_new extends LogicOfAdd {
         EditText NoweEng = (EditText) findViewById(R.id.NoweEng);
 
 
-        DodajDoPowtorek(NowePL, NoweEng);
+        DodajDoPowtorek(NowePL, NoweEng, lista);
 
 
     }

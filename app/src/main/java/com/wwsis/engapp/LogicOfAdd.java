@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class LogicOfAdd extends AppCompatActivity {
 
-    public void DodajDoPowtorek(EditText nazwaTv1, EditText nazwaTv2){
+    public void DodajDoPowtorek(EditText nazwaTv1, EditText nazwaTv2, String lista){
 
         //klasa inicjujaca tej metody musi podac id TextView z ktorego bedzie kozystac
         //np. TextView DodanoInfo = (TextView) findViewById(R.id.DodanoInfo);
@@ -27,7 +27,7 @@ public class LogicOfAdd extends AppCompatActivity {
             DodanoInfo.setText("Próbujesz dodać puste pole");
         }
         else{
-            db.execSQL("INSERT INTO Powtorki VALUES ( " + powtENG + ", " + powtPL + ",null);");
+            db.execSQL("INSERT INTO "+lista+" VALUES ( " + powtENG + ", " + powtPL + ",null);");
             TextView DodanoInfo = (TextView) findViewById(R.id.DodanoInfo);
             DodanoInfo.setText("Dodałeś i działa ! ! !");
             nazwaTv1.setText("");

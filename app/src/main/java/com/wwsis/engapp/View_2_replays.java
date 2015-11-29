@@ -19,6 +19,7 @@ public class View_2_replays extends AppCompatActivity {
     int numerSlowka;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

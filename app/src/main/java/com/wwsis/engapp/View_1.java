@@ -19,6 +19,8 @@ public class View_1 extends AppCompatActivity {
         SQLiteDatabase db = openOrCreateDatabase("BazaDomrzeczowniki", MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS Powtorki (Angielski1 VARCHAR, Polski1 VARCHAR, id_Powt INTEGER PRIMARY KEY AUTOINCREMENT);");
 
+        db.execSQL("CREATE TABLE IF NOT EXISTS Lista1 (Angielski1 VARCHAR, Polski1 VARCHAR, id_Powt INTEGER PRIMARY KEY AUTOINCREMENT);");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Lista2 (Angielski1 VARCHAR, Polski1 VARCHAR, id_Powt INTEGER PRIMARY KEY AUTOINCREMENT);");
     }
 
     @Override
