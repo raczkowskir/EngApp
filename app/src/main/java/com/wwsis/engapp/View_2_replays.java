@@ -3,8 +3,8 @@ package com.wwsis.engapp;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,7 +14,10 @@ import android.widget.TextView;
 import android.database.CursorIndexOutOfBoundsException;
 
 
-public class View_2_replays extends ActionBarActivity {
+public class View_2_replays extends AppCompatActivity {
+    int nr_slowka = 0;
+    int numerSlowka;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +66,7 @@ public class View_2_replays extends ActionBarActivity {
             db.execSQL("DROP TABLE " + "Powtorki");
             db.execSQL("CREATE TABLE IF NOT EXISTS Powtorki (Angielski1 VARCHAR, Polski1 VARCHAR, id_Powt INTEGER PRIMARY KEY AUTOINCREMENT);");
 
-            System.out.println("Kibel czysty !!");
+            System.out.println("Posprzatane !!");
 
             return true;
         }
@@ -71,10 +74,8 @@ public class View_2_replays extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    int nr_slowka = 0;
-    int numerSlowka;
-
     public void back(View view) {
+
         SQLiteDatabase db = openOrCreateDatabase("BazaDomrzeczowniki", MODE_PRIVATE, null);
         Cursor cursor = db.rawQuery("SELECT * FROM Powtorki", null);
         int nrOfRows = cursor.getCount();
@@ -97,11 +98,17 @@ public class View_2_replays extends ActionBarActivity {
             slowo.setText(cursor.getString(cursor.getColumnIndex("Angielski1")));
             licznik.setText(daneDoLicznika);
 
+            EditText tlumaczenie = (EditText) findViewById(R.id.editTexty);
+            tlumaczenie.setText("");
+
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Wylapano wyjatek w cofaniu");
         }
+
     }
     public void nastepne(View view) {
+
+
         SQLiteDatabase db = openOrCreateDatabase("BazaDomrzeczowniki", MODE_PRIVATE, null);
         Cursor cursor = db.rawQuery("SELECT * FROM Powtorki", null);
         int nrOfRows = cursor.getCount();
@@ -124,9 +131,13 @@ public class View_2_replays extends ActionBarActivity {
             slowo.setText(cursor.getString(cursor.getColumnIndex("Angielski1")));
             licznik.setText(daneDoLicznika);
 
+            EditText tlumaczenie = (EditText) findViewById(R.id.editTexty);
+            tlumaczenie.setText("");
+
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Wylapano wyjatek");
         }
+
     }
 
 
@@ -149,7 +160,6 @@ public class View_2_replays extends ActionBarActivity {
             Log.i("jak dziala", "wysypalo sie bo lista jest pusta");
         }
 
-
     }
 
     public void usun(View view) {
@@ -168,6 +178,13 @@ public class View_2_replays extends ActionBarActivity {
         String resztaS = "" + reszta;
         Log.i("Reszta:", resztaS);
         Log.i("Aktualne slowo:", " " + powtENG);
+
+        int nrOfRows = cursor.getCount();
+        TextView licznik = (TextView) findViewById(R.id.licznik);
+        String daneDoLicznika = numerSlowka + "/" + nrOfRows;
+        cursor.moveToPosition(nr_slowka);
+    //    slowo.setText(cursor.getString(cursor.getColumnIndex("Angielski1")));
+        licznik.setText(daneDoLicznika);
     }
 
     public void sprawdzam(View view) {
