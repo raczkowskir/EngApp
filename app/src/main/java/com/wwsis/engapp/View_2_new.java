@@ -5,10 +5,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
-
-public class View_2_new extends Ulatwiacz {
+public class View_2_new extends LogicOfAdd {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
