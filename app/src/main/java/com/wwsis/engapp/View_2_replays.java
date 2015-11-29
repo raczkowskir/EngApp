@@ -66,7 +66,7 @@ public class View_2_replays extends AppCompatActivity {
             db.execSQL("DROP TABLE " + "Powtorki");
             db.execSQL("CREATE TABLE IF NOT EXISTS Powtorki (Angielski1 VARCHAR, Polski1 VARCHAR, id_Powt INTEGER PRIMARY KEY AUTOINCREMENT);");
 
-            System.out.println("Kibel czysty !!");
+            System.out.println("Posprzatane !!");
 
             return true;
         }
