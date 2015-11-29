@@ -8,15 +8,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.support.v7.app.AppCompatActivity;
 
+import java.lang.reflect.InvocationTargetException;
+
 public class LogicOfBackNext extends AppCompatActivity{
 
+    TextView slowo = (TextView) findViewById(R.id.word);
+    TextView licznik = (TextView) findViewById(R.id.licznik);
+    EditText tlumaczenie = (EditText) findViewById(R.id.editTexty);
 
     int nr_slowka = 0;
     int numerSlowka;
 
- /*   TextView slowo = (TextView) findViewById(R.id.word);
-    TextView licznik = (TextView) findViewById(R.id.licznik);
-     EditText tlumaczenie = (EditText) findViewById(R.id.editTexty);
+
+ /*
 
             TextView slowo = (TextView) findViewById(R.id.word);
         TextView licznik = (TextView) findViewById(R.id.licznik);
@@ -25,13 +29,15 @@ public class LogicOfBackNext extends AppCompatActivity{
             EditText tlumaczenie = (EditText) findViewById(R.id.editTexty);
 
 */
-    public void back(TextView slowo, TextView licznik, EditText tlumaczenie){
+    public void backi(TextView slowo, TextView licznik, EditText tlumaczenie, int nr_slowka, int numerSlowka){
+
         SQLiteDatabase db = openOrCreateDatabase("BazaDomrzeczowniki", MODE_PRIVATE, null);
+        try {
         Cursor cursor = db.rawQuery("SELECT * FROM Powtorki", null);
         int nrOfRows = cursor.getCount();
 
+               this.nr_slowka=nr_slowka;
 
-        try {
             if (nr_slowka != 0) {
                 nr_slowka--;
             } else {
@@ -52,8 +58,11 @@ public class LogicOfBackNext extends AppCompatActivity{
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Wylapano wyjatek w cofaniu");
         }
+    catch (NullPointerException x) {
+        System.out.println("Jakis problem z Invocation");
     }
-    public void next(TextView slowo, TextView licznik, EditText tlumaczenie) {
+    }
+    public void next(TextView slowo, TextView licznik, EditText tlumaczenie, int nr_slowka, int numerSlowka) {
         SQLiteDatabase db = openOrCreateDatabase("BazaDomrzeczowniki", MODE_PRIVATE, null);
         Cursor cursor = db.rawQuery("SELECT * FROM Powtorki", null);
         int nrOfRows = cursor.getCount();
@@ -81,4 +90,14 @@ public class LogicOfBackNext extends AppCompatActivity{
             System.out.println("Wylapano wyjatek");
         }
     }
+    /*
+
+    public void doNext(int nr_slowka, int numerSlowka){
+        next(slowo, licznik, tlumaczenie, nr_slowka, numerSlowka);
+    }
+*/
+    public void doBack(){
+        backi(slowo, licznik, tlumaczenie, nr_slowka, numerSlowka);
+    }
+
 }

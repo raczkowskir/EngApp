@@ -15,6 +15,9 @@ import android.database.CursorIndexOutOfBoundsException;
 
 
 public class View_2_replays extends AppCompatActivity {
+    int nr_slowka = 0;
+    int numerSlowka;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,10 +74,8 @@ public class View_2_replays extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    int nr_slowka = 0;
-    int numerSlowka;
-
     public void back(View view) {
+
         SQLiteDatabase db = openOrCreateDatabase("BazaDomrzeczowniki", MODE_PRIVATE, null);
         Cursor cursor = db.rawQuery("SELECT * FROM Powtorki", null);
         int nrOfRows = cursor.getCount();
@@ -103,8 +104,11 @@ public class View_2_replays extends AppCompatActivity {
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Wylapano wyjatek w cofaniu");
         }
+
     }
     public void nastepne(View view) {
+
+
         SQLiteDatabase db = openOrCreateDatabase("BazaDomrzeczowniki", MODE_PRIVATE, null);
         Cursor cursor = db.rawQuery("SELECT * FROM Powtorki", null);
         int nrOfRows = cursor.getCount();
@@ -133,6 +137,7 @@ public class View_2_replays extends AppCompatActivity {
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Wylapano wyjatek");
         }
+
     }
 
 
